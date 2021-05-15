@@ -1,54 +1,51 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      Collage artist
-    </p>
+    <p>Collage artist</p>
     <div class="gallery">
+      <div class="card">
+        <a target="_blank" href="../assets/Artgrab_Square 2_ins.jpg">
+          <img
+            src="../assets/Artgrab_Square 2_ins.jpg"
+            alt="album art 1"
+            width="1200"
+            height="1200"
+          />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
 
-    <div class="card">
-      <a target="_blank" href="../assets/Artgrab_Square 2_ins.jpg">
-        <img
-          src="../assets/Artgrab_Square 2_ins.jpg"
-          alt="album art 1"
-          width="1200"
-          height="1200"
-        />
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
+      <div class="card">
+        <a target="_blank" href="../assets/Artgrab-Just do it-2.jpg">
+          <img src="../assets/Artgrab-Just do it-2.jpg" alt="album art 2" />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
 
-    <div class="card">
-      <a target="_blank" href="../assets/Artgrab-Just do it-2.jpg">
-        <img src="../assets/Artgrab-Just do it-2.jpg" alt="album art 2" />
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
+      <div class="card">
+        <a target="_blank" href="../assets/Artgrab-unicorn_stairs-ins.jpg">
+          <img
+            src="../assets/Artgrab-unicorn_stairs-ins.jpg"
+            alt="album art 3"
+            width="1200"
+            height="1200"
+          />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
 
-    <div class="card">
-      <a target="_blank" href="../assets/Artgrab-unicorn_stairs-ins.jpg">
-        <img
-          src="../assets/Artgrab-unicorn_stairs-ins.jpg"
-          alt="album art 3"
-          width="1200"
-          height="1200"
-        />
-      </a>
-      <div class="desc">Add a description of the image here</div>
+      <div class="card">
+        <a target="_blank" href="../assets/Artgrab-Pyramid in the sky-ins.jpg">
+          <img
+            src="../assets/Artgrab-Pyramid in the sky-ins.jpg"
+            alt="album art 4"
+            width="1200"
+            height="1200"
+          />
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
     </div>
-
-    <div class="card">
-      <a target="_blank" href="../assets/Artgrab-Pyramid in the sky-ins.jpg">
-        <img
-          src="../assets/Artgrab-Pyramid in the sky-ins.jpg"
-          alt="album art 4"
-          width="1200"
-          height="1200"
-        />
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
-</div>
     <h3>Essential Links</h3>
     <ul>
       <li>
@@ -68,7 +65,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Homepage",
   props: {
     msg: String
   }
@@ -104,7 +101,6 @@ div.gallery {
   margin: auto;
   display: grid;
   grid-gap: 3rem;
-
 }
 
 @media (min-width: 0px) {
