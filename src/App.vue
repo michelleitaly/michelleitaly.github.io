@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <!-- <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/test">Test</router-link>
+    </div> -->
     <div v-if="showSearch" class="outerBlank">
       <div class="searchWrap">
         <input class="inputSearch" type="text" placeholder="Search" />
@@ -60,7 +64,11 @@
         </a>
       </div>
       <ul>
-        <li><a href="#home">SHOP PRINTS</a></li>
+        <li>
+          <router-link to="/PrintsPages" target="_blank"
+            >SHOP PRINTS</router-link
+          >
+        </li>
         <li><a href="#news">COVER ART</a></li>
         <li><a href="#contact">GALLERY</a></li>
         <li><a href="#about">INFO&FAQS</a></li>
@@ -80,21 +88,15 @@
         />
       </div>
     </div>
-    <div id="banner">
-      <button class="bannerButton">SHOP PRINTS</button>
-    </div>
-    <homepage msg="DayDream" />
+
+    <router-view />
   </div>
 </template>
 
 <script>
-import homepage from "./components/Homepage.vue";
-
 export default {
   name: "app",
-  components: {
-    homepage
-  },
+  components: {},
   data() {
     return {
       showSearch: false,
@@ -138,62 +140,82 @@ export default {
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
-  align-items: center;
   z-index: 999;
   height: 100%;
   top: 0;
   right: 0;
-  width: 200px;
+  width: 300px;
   background: white;
+  margin-bottom: 150px;
+  padding-left: 20px;
+  .itemsContainer {
+    flex-grow: 1;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+}
+.closeBag {
+  position: absolute;
+  top: 10px;
+  right: 24px;
 }
 .cartTitle {
+  padding-top: 40px;
   font-size: 25px;
   font-weight: bold;
+  height: 100px;
+  text-align: left;
 }
-.editwrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.discPrice {
-  color: rgb(226, 82, 63);
-  font-weight: bold;
-}
-.origPrice {
-  text-decoration-line: line-through;
-}
-.edit {
-  width: 20px;
-  height: 20px;
-}
-.delete {
-  width: 20px;
-  height: 20px;
-}
-.promoWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
+.itemWrapper {
+  background-color: red;
+  height: 500px;
+  overflow-y: auto;
+  .editwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .discPrice {
+    color: rgb(226, 82, 63);
+    font-weight: bold;
+  }
+  .origPrice {
+    text-decoration-line: line-through;
+  }
+  .edit {
+    width: 20px;
+    height: 20px;
+  }
+  .delete {
+    width: 20px;
+    height: 20px;
+  }
+  .promoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
 }
 
 .totalWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // position: absolut./views/Homepage.vue
+  // bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: #fff;
+
   font-weight: bold;
   font-size: 25px;
-}
-.orderButton {
-  background-color: rgb(44, 189, 100);
-  width: 100%;
-  height: 40px;
-  border: 0;
-  border-radius: 5px;
-  font-weight: bold;
-  color: honeydew;
+  .orderButton {
+    background-color: rgb(44, 189, 100);
+    width: 80%;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+
+    color: honeydew;
+  }
 }
 .showPointer {
   cursor: pointer;
@@ -263,36 +285,5 @@ export default {
   text-align: center;
   padding: 0px 16px;
   text-decoration: none;
-}
-#banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  max-width: 1300px;
-  background-image: url("./assets/Artgrab-black unicorn-banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 400px;
-  margin: 0 auto;
-  @media (max-width: 800px) {
-    height: 250px;
-  }
-  .bannerButton {
-    background-color: black;
-    color: blanchedalmond;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    &:hover {
-      background-color: rgb(110, 110, 110);
-    }
-  }
-  /*.bannerButton:hover {
-    background-color: rgb(82, 82, 82);
-  }*/
 }
 </style>
