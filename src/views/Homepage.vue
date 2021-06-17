@@ -67,9 +67,9 @@ export default {
   background-position: center;
   height: 400px;
   margin: 0 auto;
-  @media (max-width: 800px) {
-    height: 250px;
-  }
+  // @media (max-width: 800px) {
+  //   height: 250px;
+  // }
   .bannerButton {
     background-color: black;
     font-size: 16px;

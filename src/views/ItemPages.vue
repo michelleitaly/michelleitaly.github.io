@@ -1,6 +1,10 @@
 <template>
   <div>
-    <DetailCard />
+    <div>
+      <DetailCard />
+    </div>
+    <div>you might also like</div>
+    <div></div>
   </div>
 </template>
 
@@ -8,7 +12,7 @@
 import DetailCard from "../components/DetailCard.vue";
 
 export default {
-  name: "itemDetail",
+  name: "ItemPages",
   components: {
     DetailCard
   },

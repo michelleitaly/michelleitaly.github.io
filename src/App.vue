@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/test">Test</router-link>
@@ -54,7 +54,9 @@
           15€
         </div>
       </div>
-      <button class="orderButton">PROCESS ORDER</button>
+      <router-link to="/PaymentPage">
+        <button class="orderButton">PROCESS ORDER</button></router-link
+      >
     </div>
 
     <div id="navigationbar">
@@ -63,14 +65,14 @@
           <img src="./assets/Logo.png" alt="logo" width="100" height="100" />
         </a>
       </div>
-      <ul>
+      <ul class="navbarHorizontal">
         <li>
           <router-link to="/PrintsPages" target="_blank"
             >SHOP PRINTS</router-link
           >
         </li>
         <li><a href="#news">COVER ART</a></li>
-        <li><a href="#contact">GALLERY</a></li>
+        <li><a href="#contact">PHONE CASES</a></li>
         <li><a href="#about">INFO&FAQS</a></li>
       </ul>
       <div class="icons">
@@ -86,11 +88,25 @@
           src="./assets/bag.png"
           alt="bag"
         />
+
+        <span class="navbarHiden">
+          <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+          <v-navigation-drawer v-model="drawer" absolute temporary>
+            <v-list>
+              <v-list-item-group v-model="group" class="navbarList">
+                <v-list-item-title>SHOP PRINTS</v-list-item-title>
+                <v-list-item-title>COVER ART</v-list-item-title>
+                <v-list-item-title>PHONE CASES</v-list-item-title>
+                <v-list-item-title>INFO&FAQS</v-list-item-title>
+              </v-list-item-group>
+            </v-list>
+          </v-navigation-drawer>
+        </span>
       </div>
     </div>
 
     <router-view />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -99,6 +115,8 @@ export default {
   components: {},
   data() {
     return {
+      drawer: false,
+      group: null,
       showSearch: false,
       showBag: false,
       textSearch: "",
@@ -264,17 +282,21 @@ export default {
     width: 20px;
     height: 20px;
     margin-left: 20px;
+    margin-right: 10px;
   }
 }
 .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100px;
 }
-#navigationbar ul {
-  list-style-type: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
+// #navigationbar ul {
+//   list-style-type: none;
+//   display: flex;
+//   padding: 0;
+//   margin: 0;
+// }
 
 #navigationbar li {
   display: flex;
@@ -285,5 +307,19 @@ export default {
   text-align: center;
   padding: 0px 16px;
   text-decoration: none;
+}
+.navbarHiden {
+  @media (min-width: 800px) {
+    display: none;
+  }
+}
+.navbarHorizontal {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
 </style>
